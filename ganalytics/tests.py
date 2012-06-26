@@ -16,14 +16,14 @@ class GoogleAnalytics(TestCase):
         self.assertRaises(TemplateSyntaxError, self.render, '{% ganalytics %}')
 
     def test_render_doesnt_render_anything_if_no_setting_exists(self):
-        del settings.GOOGLE_ANALYTICS_TRACKING_CODE
+        del settings.GANALYTICS_TRACKING_CODE
         self.assertEqual(self.render('{% load ganalytics %}{% ganalytics %}'), '')
 
     def test_render_doesnt_render_anything_if_the_setting_exists_but_is_not_valid(self):
-        settings.GOOGLE_ANALYTICS_TRACKING_CODE = ''
+        settings.GANALYTICS_TRACKING_CODE = ''
         self.assertEqual(self.render('{% load ganalytics %}{% ganalytics %}'), '')
 
-        settings.GOOGLE_ANALYTICS_TRACKING_CODE = None
+        settings.GANALYTICS_TRACKING_CODE = None
         self.assertEqual(self.render('{% load ganalytics %}{% ganalytics %}'), '')
 
     def test_render_returns_javascript_code_if_setting_exists(self):
