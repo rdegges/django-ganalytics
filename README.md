@@ -21,3 +21,54 @@ Unfortunately, all the existing solutions don't do this, and that pisses me
 off!
 
 ![squint](https://github.com/rdegges/django-google-analytics/raw/master/assets/squint.png)
+
+
+## Installation and Usage
+
+Anyway, let's install this bitch! The first thing you'll want to do is run:
+
+``` bash
+$ pip install django-google-analytics
+```
+
+Next, modify your ``settings.py`` file, and add your Google Analytics code
+(usually something like ``UA-XXXXXXXX-XX``):
+
+``` python
+# settings.py
+GOOGLE_ANALYTICS_TRACKING_CODE = 'UA-XXXXXXXX-XX'
+```
+
+Now, to actually render your Google Analytics asynchronous javascript code,
+edit your desired Django template (I like to do this in my ``base.html``
+template), and add the following:
+
+``` html
+{% load google_analytics %}
+<!--- ... -->
+
+<head>
+  {% google_analytics %}
+</head>
+
+<!--- ... -->
+```
+
+When Django processes your template, it'll replace ``{% google_analytics %}``
+with:
+
+``` html
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_TRACKING_CODE }}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+```
+
+Easy, right?
