@@ -9,6 +9,8 @@ Simple Google Analytics integration for Django.
 * email:  rdegges@gmail.com
 * status: maintained, in development
 
+[![Build Status](https://secure.travis-ci.org/rdegges/django-google-analytics.png?branch=master)](http://travis-ci.org/rdegges/django-google-analytics)
+
 
 ## Purpose
 
