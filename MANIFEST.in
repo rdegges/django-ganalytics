@@ -1,0 +1,5 @@
+include manage.py README.md UNLICENSE
+recursive-exclude google_analytics *.pyc
+recursive-include assets *.png
+recursive-exclude test_project *.pyc
+recursive-include test_project *.py
