@@ -32,10 +32,17 @@ $ pip install django-google-analytics
 ```
 
 Next, modify your ``settings.py`` file, and add your Google Analytics code
-(usually something like ``UA-XXXXXXXX-XX``):
+(usually something like ``UA-XXXXXXXX-XX``), as well as put
+``google_analytics`` in your ``INSTALLED_APPS``:
 
 ``` python
 # settings.py
+
+INSTALLED_APPS = (
+    # ...
+    'google_analytics',
+)
+
 GOOGLE_ANALYTICS_TRACKING_CODE = 'UA-XXXXXXXX-XX'
 ```
 
