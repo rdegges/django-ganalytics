@@ -1,4 +1,4 @@
-# django-google-analytics
+# django-ganalytics
 
 Simple Google Analytics integration for Django.
 
@@ -9,7 +9,7 @@ Simple Google Analytics integration for Django.
 * email:  rdegges@gmail.com
 * status: maintained, in development
 
-[![Build Status](https://secure.travis-ci.org/rdegges/django-google-analytics.png?branch=master)](http://travis-ci.org/rdegges/django-google-analytics)
+[![Build Status](https://secure.travis-ci.org/rdegges/django-ganalytics.png?branch=master)](http://travis-ci.org/rdegges/django-ganalytics)
 
 
 ## Purpose
@@ -22,7 +22,7 @@ damnet!
 Unfortunately, all the existing solutions don't do this, and that pisses me
 off!
 
-![squint](https://github.com/rdegges/django-google-analytics/raw/master/assets/squint.png)
+![squint](https://github.com/rdegges/django-ganalytics/raw/master/assets/squint.png)
 
 
 ## Installation and Usage
@@ -30,22 +30,22 @@ off!
 Anyway, let's install this bitch! The first thing you'll want to do is run:
 
 ``` bash
-$ pip install django-google-analytics
+$ pip install django-ganalytics
 ```
 
 Next, modify your ``settings.py`` file, and add your Google Analytics code
 (usually something like ``UA-XXXXXXXX-XX``), as well as put
-``google_analytics`` in your ``INSTALLED_APPS``:
+``ganalytics`` in your ``INSTALLED_APPS``:
 
 ``` python
 # settings.py
 
 INSTALLED_APPS = (
     # ...
-    'google_analytics',
+    'ganalytics',
 )
 
-GOOGLE_ANALYTICS_TRACKING_CODE = 'UA-XXXXXXXX-XX'
+GANALYTICS_TRACKING_CODE = 'UA-XXXXXXXX-XX'
 ```
 
 Now, to actually render your Google Analytics asynchronous javascript code,
@@ -53,23 +53,23 @@ edit your desired Django template (I like to do this in my ``base.html``
 template), and add the following:
 
 ``` html
-{% load google_analytics %}
+{% load ganalytics %}
 <!--- ... -->
 
 <head>
-  {% google_analytics %}
+  {% ganalytics %}
 </head>
 
 <!--- ... -->
 ```
 
-When Django processes your template, it'll replace ``{% google_analytics %}``
+When Django processes your template, it'll replace ``{% ganalytics %}``
 with:
 
 ``` html
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_TRACKING_CODE }}']);
+  _gaq.push(['_setAccount', '{{ GANALYTICS_TRACKING_CODE }}']);
   _gaq.push(['_trackPageview']);
 
   (function() {

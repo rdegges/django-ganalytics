@@ -124,10 +124,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
-    'google_analytics',
+    'ganalytics',
 )
 
-GOOGLE_ANALYTICS_TRACKING_CODE = 'UA-12345678-90'
+GANALYTICS_TRACKING_CODE = 'UA-12345678-90'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

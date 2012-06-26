@@ -1,6 +1,6 @@
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_TRACKING_CODE }}']);
+  _gaq.push(['_setAccount', '{{ GANALYTICS_TRACKING_CODE }}']);
   _gaq.push(['_trackPageview']);
 
   (function() {

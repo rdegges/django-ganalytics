@@ -12,11 +12,11 @@ register = template.Library()
 
 
 @register.simple_tag
-def google_analytics():
+def ganalytics():
     """Render Google Analytics tracking code if, and only if, the user has
-    defined a ``GOOGLE_ANALYTICS_TRACKING_CODE`` setting.
+    defined a ``GANALYTICS_TRACKING_CODE`` setting.
     """
-    if hasattr(settings, 'GOOGLE_ANALYTICS_TRACKING_CODE') and settings.GOOGLE_ANALYTICS_TRACKING_CODE:
-        context = Context({'GOOGLE_ANALYTICS_TRACKING_CODE': settings.GOOGLE_ANALYTICS_TRACKING_CODE})
-        return get_template('google_analytics/google_analytics.js').render(context)
+    if hasattr(settings, 'GANALYTICS_TRACKING_CODE') and settings.GANALYTICS_TRACKING_CODE:
+        context = Context({'GANALYTICS_TRACKING_CODE': settings.GANALYTICS_TRACKING_CODE})
+        return get_template('ganalytics/ganalytics.js').render(context)
     return ''
