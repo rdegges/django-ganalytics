@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 setup(
 
     # Basic package information:
-    name = 'django-google-analytics',
+    name = 'django-ganalytics',
     version = '0.1',
     packages = find_packages(),
 
@@ -21,7 +21,7 @@ setup(
     author = 'Randall Degges',
     author_email = 'rdegges@gmail.com',
     license = 'UNLICENSE',
-    url = 'https://github.com/rdegges/django-google-analytics',
+    url = 'https://github.com/rdegges/django-ganalytics',
     keywords = 'django google analytics',
     description = 'Simple Google Analytics integration for Django.',
     long_description = open(normpath(join(dirname(abspath(__file__)),
