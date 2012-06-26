@@ -1,5 +1,7 @@
 include manage.py README.md UNLICENSE
-recursive-exclude google_analytics *.pyc
+recursive-exclude ganalytics *.pyc
+recursive-include ganalytics *.py
+recursive-include ganalytics *.js
 recursive-include assets *.png
 recursive-exclude test_project *.pyc
 recursive-include test_project *.py
