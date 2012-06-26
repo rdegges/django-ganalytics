@@ -18,4 +18,4 @@ def google_analytics():
     """
     if hasattr(settings, 'GOOGLE_ANALYTICS_TRACKING_CODE') and settings.GOOGLE_ANALYTICS_TRACKING_CODE:
         context = Context({'GOOGLE_ANALYTICS_TRACKING_CODE': settings.GOOGLE_ANALYTICS_TRACKING_CODE})
-        return get_template('google_analytics.js').render(context)
+        return get_template('google_analytics/google_analytics.js').render(context)
