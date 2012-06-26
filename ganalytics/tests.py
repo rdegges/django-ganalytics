@@ -6,7 +6,7 @@ from django.test import TestCase
 class GoogleAnalytics(TestCase):
 
     def setUp(self):
-        self.orig = settings.GOOGLE_ANALYTICS_TRACKING_CODE
+        self.orig = settings.GANALYTICS_TRACKING_CODE
         self.render = lambda t: Template(t).render(Context())
 
     def test_can_load_google_analytics_template_tags(self):
@@ -30,4 +30,4 @@ class GoogleAnalytics(TestCase):
         self.assertIn('UA-12345678-90', self.render('{% load ganalytics %}{% ganalytics %}'))
 
     def tearDown(self):
-        settings.GOOGLE_ANALYTICS_TRACKING_CODE = self.orig
+        settings.GANALYTICS_TRACKING_CODE = self.orig
