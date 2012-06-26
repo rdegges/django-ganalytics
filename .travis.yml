@@ -4,4 +4,4 @@ python:
 install:
   - python setup.py develop
 script:
-  - python manage.py test google_analytics
+  - python manage.py test ganalytics
