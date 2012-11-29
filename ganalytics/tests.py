@@ -27,6 +27,7 @@ class GoogleAnalytics(TestCase):
         self.assertEqual(self.render('{% load ganalytics %}{% ganalytics %}'), '')
 
     def test_render_returns_javascript_code_if_setting_exists(self):
+        settings.GANALYTICS_TRACKING_CODE = 'UA-12345678-90'
         self.assertIn('UA-12345678-90', self.render('{% load ganalytics %}{% ganalytics %}'))
 
     def tearDown(self):
