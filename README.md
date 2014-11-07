@@ -75,7 +75,6 @@ with:
 
   ga('create', '{{ GANALYTICS_TRACKING_CODE }}', 'auto');
   ga('send', 'pageview');
-
 </script>
 ```
 
