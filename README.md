@@ -6,7 +6,7 @@ Simple Google Analytics integration for Django.
 ## Meta
 
 * author: Randall Degges
-* email:  rdegges@gmail.com
+* email:  r@rdegges.com
 * status: maintained, in development
 
 [![Build Status](https://secure.travis-ci.org/rdegges/django-ganalytics.png?branch=master)](http://travis-ci.org/rdegges/django-ganalytics)
