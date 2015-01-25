@@ -16,7 +16,7 @@ def ganalytics():
     """Render Google Analytics tracking code if, and only if, the user has
     defined a ``GANALYTICS_TRACKING_CODE`` setting.
     """
-    if hasattr(settings, 'GANALYTICS_TRACKING_CODE') and settings.GANALYTICS_TRACKING_CODE:
+    if (not settings.DEBUG) and getattr(settings, 'GANALYTICS_TRACKING_CODE', False):
         context = Context({'GANALYTICS_TRACKING_CODE': settings.GANALYTICS_TRACKING_CODE})
         return get_template('ganalytics/ganalytics.js').render(context)
     return ''
