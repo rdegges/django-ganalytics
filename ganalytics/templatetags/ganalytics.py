@@ -17,6 +17,6 @@ def ganalytics():
     defined a ``GANALYTICS_TRACKING_CODE`` setting.
     """
     if (not settings.DEBUG) and getattr(settings, 'GANALYTICS_TRACKING_CODE', False):
-        context = Context({'GANALYTICS_TRACKING_CODE': settings.GANALYTICS_TRACKING_CODE})
+        context = {'GANALYTICS_TRACKING_CODE': settings.GANALYTICS_TRACKING_CODE}
         return get_template('ganalytics/ganalytics.js').render(context)
     return ''
