@@ -6,7 +6,7 @@
 
   ga('create', '{{ GANALYTICS_TRACKING_CODE }}', 'auto');
   {% if USER_ID %}
-    ga('set', 'userId', '{{ USER_ID }}'); // Set the user ID using signed-in user_id.
+    ga('set', 'userId', '{{ USER_ID }}');
   {% endif %}
   ga('send', 'pageview');
 </script>
