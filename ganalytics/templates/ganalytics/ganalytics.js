@@ -5,5 +5,8 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', '{{ GANALYTICS_TRACKING_CODE }}', 'auto');
+  {% if USER_ID %}
+    ga('set', 'userId', '{{ USER_ID }}');
+  {% endif %}
   ga('send', 'pageview');
 </script>
