@@ -7,7 +7,7 @@ setup(
 
     # Basic package information:
     name = 'django-ganalytics',
-    version = '0.6.0',
+    version = '0.7.0',
     packages = ['ganalytics'],
 
     # Packaging options:
